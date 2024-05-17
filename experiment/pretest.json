@@ -2,38 +2,61 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Q1. Pole of a system lies on the imaginary axis of the S-plane, then the system is:_______ ",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Unstable",
+        "b": "Stable",
+        "c": "Marginally Stable",
+        "d": "None"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q2. Which one of the following rules determine the mapping of s-plane to z-plane? ",
+      "answers": {
+        "a": "Right side of the s-plane maps into outside of the unit circle in z-plane",
+        "b": "Left half of s-plane maps into inside of the unit circle",
+        "c": "imaginary axis in s-plane maps into the circumference of the unit circle",
+        "d": "all of the mentioned"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q3. The transformation technique in which there is one to one mapping from s-domain to z-domain is",
+      "answers": {
+        "a": "Approximation of derivatives",
+        "b": "Bilinear transformation method",
+        "c": "Impulse invariance method",
+        "d": "Backward difference for the derivative"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q4. Impulse invariance method is:",
+      "answers": {
+        "a": "Many to one mapping from s-domain to z-domain",
+        "b": "One to one mapping from s-domain to z-domain",
+        "c": "One to many mapping from s-domain to z-domain",
+        "d": "Many to many mapping from s-domain to z-domain"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Q5. Pole of a system lies on the unit cirle in the z-plane, then the system is :",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Unstable",
+        "b": "Stable",
+        "c": "Marginally Stable",
+        "d": "None"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
     }
+	
+	
   ]
 }
