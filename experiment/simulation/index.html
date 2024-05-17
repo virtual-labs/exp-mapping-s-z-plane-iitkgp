@@ -1,13 +1,339 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<!-- This HTML page and script files are developed by
+   Kamal Sandeep Karreddula
+    Research Scholar,
+    Electrical Engineering Department,
+    IIT Kharagpur.
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
-</body>
-</html>
+   Piyali Chattopadhyay
+    Project Scientist-Technical,
+    Virtual Labs IIT Kharagpur.-->
+
+<!DOCTYPE html>
+<html lang="en"><!--html tag start-->
+<head>
+    <title>Mapping of S-plane to Z-plane</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/adik.css" rel="stylesheet">
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!--<script  src="./js/TC.js">   </script>-->
+  <script  src="./js/SZ.js"> </script>
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>-->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js  "></script>
+ 
+ 
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+
+<link rel="stylesheet" href="./css/TC.css">
+
+	
+
+
+  <style>
+	.bluedot{
+	position:absolute;
+    border: 2px solid blue;
+    border-radius:50%;
+    background-color:blue;
+    background-image:linear-gradient(90deg,#0066ff,#00ccff);
+	box-shadow: 5px 5px 8px #888888;
+	}
+	.handlep{
+	position:absolute;
+    border: 2px solid blue;
+    border-radius:50%;
+    background-color:white;
+    background-image:url(./images/plus.png);
+	background-size:cover;
+	background-position:center;
+	
+	}
+	
+	.handlen{
+	position:absolute;
+    border: 2px solid blue;
+    border-radius:50%;
+    background-color:white;
+    background-image:url(./images/minus.jpg);
+	background-size:cover;
+	background-position:center;
+	
+	}
+	
+	canvas {	
+	max-width:100%;
+	}
+	
+	@media print {
+  body {
+    visibility: hidden;
+  }
+  #plotbucket {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+	
+	
+	
+  </style>
+  
+  
+  
+</head>
+<body><!--body tag start-->
+    <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
+        <div class="row"><!--First row under 1st container start-->
+            <div class="col-md-3"><!--First col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
+            </div><!--First col under 1st row end-->
+            <div class="col-md-6"><!--2nd col under 1st row start-->
+                <p class="display-1"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
+            </div><!--2nd col under 1st row end-->
+            <div class="col-md-3"><!--3rd col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
+            </div><!--3rd col under 1st row end-->
+        </div><!--First row under 1st container end-->
+    
+        <hr>
+        <div class="row"><!--2nd row under 1st container start-->
+            <div class="col-md-3"><!--First col under 2nd row start-->
+
+            </div><!--First col under 2nd row end-->
+            <div class="col-md-6"><!--2nd col under 2nd row start-->
+                <p class="h1"> <b>Simulation</b> </p>
+            </div><!--2nd col under 2nd row end-->
+            <div class="col-md-3"><!--3rd col under 2nd row start-->
+
+            </div><!--3rd col under 2nd row end-->
+        </div><!--2nd row under 1st container end-->
+        <hr>
+        
+    </div><!--First Container under body tag end-->
+    
+   	
+    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+      <div class="row"><!--First row under 3rd container start-->
+        <div class="col-md-1"></div><!--First col under 3rd container start& end-->
+        <div class="col-md-10"><!--2nd col under 3rd container start-->
+            <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+              <ol id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
+                      <li>At first enter the desired value of sampling time. Here default value is 1 for sampling time.</li></br>
+  
+					  <li>Enter the required number of poles and zeros value. Here default values are 0 for number of poles and zeros.</li></br>
+					   
+					  <li>Click on 'Pole - Zero entry' dropdown-menu and enter the real and imaginary values of pole and zero.
+					      Click on 'Run' button in the dropdown-menu to get the Pole - Zero Map of S plane and Z plane. </li><br/>
+						  
+					  <li>Note: Try to enter the real and imaginary values within the range (-8,3) for better visuals of points in z-plane.
+						  If any point in z-plane is not visible means value of the point is out off the axis range. </li><br/>
+					 
+					 <li>To enter the multiple values of poles and zeros, change the previous values of poles and zeros and click on 'Run' button.
+					     Plot can be downloaded by clicking on 'Download' button.</li><br/>
+					      
+						  
+					 <li>Click on '&zeta; , &omega;<sub>n</sub> entry' dropdown-menu. 
+					     Enter the values of damping ratio (&zeta;)and natural frequency (&omega;<sub>n</sub>).
+					     Click on 'Run' button in the dropdown-menu to get the Pole Map of S plane and Z plane.
+						 Plot can be downloaded by clicking on 'Download' button.</li><br/>
+
+					 <li>Click on 'Clear' button to clear the previous map before the every new simulation. 
+					     Do not click on 'Clear' button if you want to enter values of multiple poles and zeros.</li><br/> 
+
+					
+						 
+		   </ol>
+            </p> 
+          </div><!--2nd col under 3rd container end-->
+		  
+        <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+      </div><!--First row under 3rd container end-->
+    </div><!--3rd Container under body tag end-->
+	
+    <div class="container p-3 my-5 text-center border" id="canvas" ><!--Fourth container under body tag start-->
+	
+	<div class="row ">
+	
+	<div class="col-md-12">
+	
+	
+			<!--<div   class="img-container">			
+			
+			Enter the Pole P1 value :<input type="number" id="P1" min="-5" value="-1" max="5" step="0.1" style="position:absolute;width:20%" ><br/></br>
+			Enter the Pole P2 value: <input type="number" id="P2" min="-5" value="-2" max="5" step="0.1" style="position:absolute;width:20%"><br/><br/>			
+			<!--Enter the desired sampling time :    <input type="number" id="Ts" min="0.01" value="0.1" max="10" step="0.01" style="position:absolute;width:20%"readonly=readonly><br/></br>
+			Enter the Zero Z1 value :    <input type="number" onchange="inputChange()" id="Z1" min="-5" value="-1.5" max="5" step="0.1" style="position:absolute;width:20%"><br/></br>				
+			</div>
+			<br/>
+			
+				<!--//<button class="btn btn-success" id ="run" onclick="ZOH_mag();ZOH_ph()">ZOH</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="ZOH_fr()">ZOH Freq. Resp.</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="ZOH_bode()">ZOH bode</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade1_fr()">ZOH pade1 Freq.Resp.</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade1_bode()">ZOH pade1 bode</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade2_fr()">ZOH pade2 Freq.Resp.</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade2_bode()">ZOH pade2 bode</button>-->
+				<!--<button class="btn btn-danger" id ="clr" onclick="refresh()" >Clear</button>--> 
+		Enter the sampling time:&nbsp;<input id= "T" type="number" min="0" max="1" step="0.1" value="1" style="position:absolute;width:5%"> <br/>	<br/>		
+		Enter the number of poles:&nbsp;<input id= "pno" type="number" min="0" max="3" step="1" value="0" style="position:absolute;width:5%"><br/><br/>	
+		Enter the number of zeros:&nbsp;<input id= "zno" type="number" min="0" max="3" step="1" value="0" style="position:absolute;width:5%"><br/><br/>
+		
+		<!--Enter the maximum range of X-axis for s-plane:&nbsp;<input id= "Xmax" type="number" min="2" max="10" step="1" value="3" style="position:absolute;width:5%"><br/><br/>
+		Enter the minimum range of X-axis for s-plane:&nbsp;<input id= "Xmin" type="number" min="-10" max="-2" step="1" value="-3" style="position:absolute;width:5%"><br/><br/>
+		Enter the maximum range of Y-axis for s-plane:&nbsp;<input id= "Ymax" type="number" min="2" max="10" step="1" value="3" style="position:absolute;width:5%"><br/><br/>
+		Enter the minimum range of Y-axis for s-plane:&nbsp;<input id= "Ymin" type="number" min="-10" max="-2" step="1" value="-3" style="position:absolute;width:5%"><br/><br/>
+		<!--<button class="btn btn-success" id ="enter" onclick="enter_pzno()">Enter</button>-->
+		
+	 <div class="d-inline-flex p-3 gy-2">			
+		<div class="dropdown">
+  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onclick="enter_pzno()">
+    Pole - Zero entry
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  
+  <li><a style="display:none" class="dropdown-item" id ="P1" >Pole =<input id="P1r" type="number" min="-8" max="8" onchange="inputChange()" >&plus; &nbsp;j&nbsp;<input id="P1im" type="number" min="-8" max="8" onchange="inputChange()"> </a></li>
+ <!--<li><a style="display:none"class="dropdown-item" id ="P2" >P<sub>2</sub> =<input id="P2r" type="number">&plus; &nbsp;j&nbsp;<input id="P2im" type="number"> </a></li>
+  <li><a style="display:none"class="dropdown-item" id ="P3" >P<sub>3</sub> =<input id="P3r" type="number">&plus; &nbsp;j&nbsp;<input id="P3im" type="number"> </a></li>-->
+  
+  <li><a style="display:none"class="dropdown-item" id ="Z1" >Zero =<input id="Z1r" type="number" min="-8" max="8" "inputChange()" >&plus; &nbsp;j&nbsp;<input id="Z1im" type="number" min="-8" max="8" "inputChange()" > </a></li>
+ <!-- <li><a style="display:none"class="dropdown-item" id ="Z2" >Z<sub>2</sub> =<input id="Z2r" type="number">&plus; &nbsp;j&nbsp;<input id="Z2im" type="number"> </a></li>
+  <li><a style="display:none"class="dropdown-item" id ="Z3" >Z<sub>3</sub> =<input id="Z3r" type="number">&plus; &nbsp;j&nbsp;<input id="Z3im" type="number"> </a></li>-->
+  
+  <li><button class="btn btn-success" id ="run" onclick="SZ()">Run</button></li>
+  <!--  <li><a class="dropdown-item" id ="run" onclick="SZ()">SZ Map</a></li>
+   <!-- <li><a class="dropdown-item" id ="run" onclick="ZOH_bode()">ZOH Bode</a></li>
+    <li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_fr()">ZOH PADE 1 Freq. Resp.</a></li>
+	<li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_bode()">ZOH PADE 1 Bode</a></li>-->
+  </ul>
+</div>&nbsp;&nbsp;	&nbsp;&nbsp;	&nbsp;&nbsp;		
+
+<div class="dropdown">
+  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false" >
+    &zeta; ,&nbsp;&omega;<sub>n</sub> entry
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  
+  <li><a  class="dropdown-item" id="ze"> &zeta; = <input id="Ze" type="number" min="0" max="1" step="0.05" value="0" onchange="inputChange()"> </a></li>
+  <li><a  class="dropdown-item" id="wn" > &omega;<sub>n</sub> = <input id="Wn" type="number"> </a></li>
+ <!--<li><a style="display:none"class="dropdown-item" id ="P2" >P<sub>2</sub> =<input id="P2r" type="number">&plus; &nbsp;j&nbsp;<input id="P2im" type="number"> </a></li>
+  <li><a style="display:none"class="dropdown-item" id ="P3" >P<sub>3</sub> =<input id="P3r" type="number">&plus; &nbsp;j&nbsp;<input id="P3im" type="number"> </a></li>-->
+  
+ <!-- <li><a style="display:none"class="dropdown-item" id ="Z1" >Zero =<input id="Z1r" type="number">&plus; &nbsp;j&nbsp;<input id="Z1im" type="number"> </a></li>
+ <!-- <li><a style="display:none"class="dropdown-item" id ="Z2" >Z<sub>2</sub> =<input id="Z2r" type="number">&plus; &nbsp;j&nbsp;<input id="Z2im" type="number"> </a></li>
+  <li><a style="display:none"class="dropdown-item" id ="Z3" >Z<sub>3</sub> =<input id="Z3r" type="number">&plus; &nbsp;j&nbsp;<input id="Z3im" type="number"> </a></li>-->
+  
+  <li><button class="btn btn-success" id ="run" onclick="ZWn()">Run</button></li>
+  <!--  <li><a class="dropdown-item" id ="run" onclick="SZ()">SZ Map</a></li>
+   <!-- <li><a class="dropdown-item" id ="run" onclick="ZOH_bode()">ZOH Bode</a></li>
+    <li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_fr()">ZOH PADE 1 Freq. Resp.</a></li>
+	<li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_bode()">ZOH PADE 1 Bode</a></li>-->
+  </ul>
+</div>&nbsp;&nbsp;
+		
+		<!--<div class="dropdown">
+  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    First Order Hold
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" id ="run" onclick="FOH_fr()">FOH Freq. Resp.</a></li>
+    <li><a class="dropdown-item" id ="run" onclick="FOH_bode()">FOH Bode</a></li>
+    <li><a class="dropdown-item" id ="run" onclick="FOH_pade1_fr()">FOH PADE 1 Freq. Resp.</a></li>
+	<li><a class="dropdown-item" id ="run" onclick="FOH_pade1_bode()">FOH PADE 1 Bode</a></li>
+  </ul>-->
+</div>&nbsp;&nbsp;
+
+		<button class="btn btn-danger" id ="clr" onclick="refresh()" >Clear</button>
+	</div>
+	</div>
+	
+	
+	
+			
+	<!--<div class="row my-5 gy-2">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+	
+			
+			
+				<!--//<button class="btn btn-success" id ="run" onclick="ZOH_mag();ZOH_ph()">ZOH</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="FOH_fr()">FOH Freq. Resp.</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="FOH_bode()">FOH bode</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade1_fr()">FOH pade1 Freq.Resp.</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade1_bode()">FOH pade1 bode</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade2_fr()">FOH pade2 Freq.Resp.</button>-->
+				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade2_bode()">FOH pade2 bode</button>-->
+				<!--<button class="btn btn-danger" id ="clr" onclick="refresh()" >Clear</button>--
+	
+	</div>
+	<div class="col-md-1"></div>
+	</div>-->
+		
+		
+		
+	 <div class="row justify-content-center"><!-----------------------graph T vs. w----------------------------------------->
+		
+	<div class="col-md-1"></div>
+			<div class="col-md-10">
+				
+				<!--<img id = "0.3fr" src="./images/plant.png" class="img-fluid" style="display:none">-->
+				<div id = "plotbucket" class="content-center " style="display:none; position:relative; border:3px solid white;height:830px;width:823px ">
+				
+				<!--<button type="button" id="exportChart2" class="btn btn-primary"  style="display:none;position:absolute;top:210%;left:28%;">Download Plot</button>-->
+				
+					<div  id="chartContainer1"  style="display:none; position:absolute; height:50%; width:100%;z-index:1 "></div>
+					<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+					<div  id="chartContainer2"  style="display:none; position:absolute; height:50%; width:100%;z-index:1 "></div>
+				
+				</div>
+				<button type="button" id="exportChart" class="btn btn-primary" style="display:none" >Download Plot</button>
+			</div>
+			
+		<div class="col-md-1"></div>	
+	
+	</div>	
+
+	
+	
+          <!-- Code End here-->
+        </div><!--Fourth container under body tag end-->
+          
+      <!--</div>
+    </div>-->
+
+    <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
+      <div class="row">
+        <footer>
+          <div class="row ce">
+            <div class="col-sm-12">
+              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
+              <a href="../../license/index.html" target="_blank"> Licensing Terms </a>
+            </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+  </div><!--Last and fifth container under body tag end-->
+  
+   
+	
+	
+</body><!--body tag end-->
+</html><!--html tag end-->
