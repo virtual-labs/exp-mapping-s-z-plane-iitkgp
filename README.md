@@ -7,7 +7,7 @@
 <b>Discipline | <b>Electrical Engineering 
 :--|:--|
 <b> Lab | <b> Digital Control Lab
-<b> Experiment|     <b> Mapping of S-plane to Z-plane and Exp 2
+<b> Experiment|     <b> Mapping of S-plane to Z-plane analytically and verification using simulation and Exp 2
 
 ### About the Experiment 
 
