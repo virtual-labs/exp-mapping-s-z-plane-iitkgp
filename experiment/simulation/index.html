@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="en"><!--html tag start-->
 <head>
-    <title>Mapping of S-plane to Z-plane</title>
+    <title>Mapping of S-plane to Z-plane analytically and verification using simulation</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/adik.css" rel="stylesheet">
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -28,6 +30,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!--<script  src="./js/TC.js">   </script>-->
   <script  src="./js/SZ.js"> </script>
+  <!-- <script src="./js/canvas2image.js"></script> -->
   
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>-->
@@ -126,10 +129,10 @@
             </div><!--3rd col under 2nd row end-->
         </div><!--2nd row under 1st container end-->
         <hr>
-        
+       
     </div><!--First Container under body tag end-->
     
-   	
+    	
     <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
       <div class="row"><!--First row under 3rd container start-->
         <div class="col-md-1"></div><!--First col under 3rd container start& end-->
@@ -303,7 +306,7 @@
 					<div  id="chartContainer2"  style="display:none; position:absolute; height:50%; width:100%;z-index:1 "></div>
 				
 				</div>
-				<button type="button" id="exportChart" class="btn btn-primary" style="display:none" >Download Plot</button>
+				<button type="button" id="exportChart" class="btn btn-primary" style="display:none" onclick="saveImg()">Download Plot</button>
 			</div>
 			
 		<div class="col-md-1"></div>	
