@@ -476,15 +476,7 @@ document.getElementById('chartContainer2').style.display  = "block";
 	
 	//document.getElementById("result").style.display = "block";
 	document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-		
-	/*chart1.exportChart({format: "jpg"});
-	chart2.exportChart({format: "jpg"});*/
 	
-	window.print();
-	
-	
-	});	
 
 
 }
@@ -789,15 +781,40 @@ document.getElementById('chartContainer2').style.display  = "block";
 	
 	//document.getElementById("result").style.display = "block";
 	document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-		
-	/*chart1.exportChart({format: "jpg"});
-	chart2.exportChart({format: "jpg"});*/
 	
-	window.print();
-	
-	
-	});	
 
+}
 
+function saveAs(uri, filename) {
+
+    var link = document.createElement('a');
+
+    if (typeof link.download === 'string') {
+
+        link.href = uri;
+        link.download = filename;
+
+        //Firefox requires the link to be in the body
+        document.body.appendChild(link);
+
+        //simulate click
+        link.click();
+
+        //remove the link when done
+        document.body.removeChild(link);
+
+    } else {
+
+        window.open(uri);
+
+    }
+}
+
+function saveImg(){
+html2canvas(document.querySelector('#plotbucket')).then(function(canvas) {
+
+        saveAs(canvas.toDataURL(), 'Plot.png');
+    }); 
+	
+	
 }
