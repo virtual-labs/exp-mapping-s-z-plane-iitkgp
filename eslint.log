@@ -1,0 +1,163 @@
+
+/home/runner/work/exp-mapping-s-z-plane-iitkgp/exp-mapping-s-z-plane-iitkgp/experiment/simulation/js/SZ.js
+    1:10  warning  'enter_pzno' is defined but never used   no-unused-vars
+   33:10  warning  'inputChange' is defined but never used  no-unused-vars
+   90:10  warning  'refresh' is defined but never used      no-unused-vars
+  127:10  warning  'SZ' is defined but never used           no-unused-vars
+  144:9   warning  'Sp' is assigned a value but never used  no-unused-vars
+  195:6   warning  'Zp' is already defined                  no-redeclare
+  195:11  warning  'math' is not defined                    no-undef
+  195:20  warning  'math' is not defined                    no-undef
+  195:27  warning  'math' is not defined                    no-undef
+  195:43  warning  'math' is not defined                    no-undef
+  209:11  warning  'math' is not defined                    no-undef
+  209:20  warning  'math' is not defined                    no-undef
+  209:27  warning  'math' is not defined                    no-undef
+  209:43  warning  'math' is not defined                    no-undef
+  223:6   warning  'x0' is assigned a value but never used  no-unused-vars
+  224:6   warning  'y0' is assigned a value but never used  no-unused-vars
+  226:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  227:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  227:10  warning  'math' is not defined                    no-undef
+  227:26  warning  'math' is not defined                    no-undef
+  228:9   warning  'math' is not defined                    no-undef
+  228:25  warning  'math' is not defined                    no-undef
+  230:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  241:19  warning  'CanvasJS' is not defined                no-undef
+  244:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  245:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  246:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  247:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  248:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  250:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  252:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  253:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  256:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  260:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  261:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  264:12  warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  265:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  266:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  278:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  285:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  302:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  312:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  313:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  314:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  315:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  326:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  330:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  333:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  334:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  349:19  warning  'CanvasJS' is not defined                no-undef
+  352:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  353:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  354:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  356:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  358:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  360:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  361:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  368:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  370:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  383:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  390:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  397:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  403:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  413:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  422:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  423:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  424:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  425:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  431:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  434:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  435:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  436:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  437:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  438:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  461:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  465:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  466:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  468:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  488:10  warning  'ZWn' is defined but never used          no-unused-vars
+  500:9   warning  'Sp' is assigned a value but never used  no-unused-vars
+  501:6   warning  'Zp' is assigned a value but never used  no-unused-vars
+  505:2   warning  'Par1' is not defined                    no-undef
+  505:7   warning  'math' is not defined                    no-undef
+  506:2   warning  'Paim1' is not defined                   no-undef
+  506:8   warning  'math' is not defined                    no-undef
+  506:37  warning  'math' is not defined                    no-undef
+  508:11  warning  'Par1' is not defined                    no-undef
+  509:11  warning  'Paim1' is not defined                   no-undef
+  510:11  warning  'Par1' is not defined                    no-undef
+  511:12  warning  'Paim1' is not defined                   no-undef
+  526:12  warning  'math' is not defined                    no-undef
+  526:21  warning  'math' is not defined                    no-undef
+  526:28  warning  'math' is not defined                    no-undef
+  526:44  warning  'math' is not defined                    no-undef
+  527:12  warning  'math' is not defined                    no-undef
+  527:21  warning  'math' is not defined                    no-undef
+  527:28  warning  'math' is not defined                    no-undef
+  527:44  warning  'math' is not defined                    no-undef
+  545:6   warning  'x0' is assigned a value but never used  no-unused-vars
+  546:6   warning  'y0' is assigned a value but never used  no-unused-vars
+  548:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  549:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  549:10  warning  'math' is not defined                    no-undef
+  549:26  warning  'math' is not defined                    no-undef
+  550:9   warning  'math' is not defined                    no-undef
+  550:25  warning  'math' is not defined                    no-undef
+  552:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  563:19  warning  'CanvasJS' is not defined                no-undef
+  566:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  567:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  568:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  570:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  572:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  573:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  580:12  warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  581:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  582:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  594:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  602:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  619:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  630:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  631:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  632:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  633:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  644:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  648:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  651:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  652:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  667:19  warning  'CanvasJS' is not defined                no-undef
+  670:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  671:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  672:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  674:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  676:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  677:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  684:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  686:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  699:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  706:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  713:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  719:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  729:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  739:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  740:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  741:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  742:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  748:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  751:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  752:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  753:2   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  754:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  755:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  766:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  770:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  771:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  773:1   warning  Mixed spaces and tabs                    no-mixed-spaces-and-tabs
+  813:10  warning  'saveImg' is defined but never used      no-unused-vars
+  814:1   warning  'html2canvas' is not defined             no-undef
+
+✖ 158 problems (0 errors, 158 warnings)
+
