@@ -4,10 +4,10 @@
 
 2. Try for various pole-zero locations in s plane corresponding to
 
-    i) Constant Damping ratio ς ,
+    i) Constant Damping ratio &zeta; ,
 
-    ii) Constant Attenuation σ ,
+    ii) Constant Attenuation &sigma; ,
 
-    iii) Constant Frequency ω,
+    iii) Constant Frequency &omega;,
 
     Check corresponding z domain mapping.
