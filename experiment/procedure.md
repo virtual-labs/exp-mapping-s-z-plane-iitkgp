@@ -10,7 +10,7 @@
 <div align="center">
 <img class="img-fluid"  src="./images/PZmap1.png" alt="">
 
-<figcaption style="color:black"> Fig.1. Entry of Sampling time, number of poles and zeros</figcaption>						  
+<b> Fig.1. Entry of Sampling time, number of poles and zeros</b>						  
 </div>
 
 3. Click on 'Pole - Zero entry' dropdown-menu and enter the real and imaginary values of pole and zero.
@@ -19,13 +19,13 @@ Click on 'Run' button in the dropdown-menu to get the Pole Zero Map of S plane a
 <div align="center">
 <img class="img-fluid"  src="./images/PZmap2.png" alt="">
 
-<figcaption style="color:black"> Fig.2. Selecting the pole-zero entry</figcaption>						  
+<b> Fig.2. Selecting the pole-zero entry</b>						  
 </div>
 
 <div align="center">
 <img class="img-fluid"  src="./images/PZmap3.png" alt="">
 
-<figcaption style="color:black"> Fig.3. Entry of poles and zeros values</figcaption>						  
+<b> Fig.3. Entry of poles and zeros values</b>						  
 </div>
 
 4. To enter the multiple values of poles and zeros, change the previous values of poles and zeros and click on 'Run' button.
@@ -39,7 +39,7 @@ Plot can be downloaded by clicking on 'Download' button.
 <div align="center">
 <img class="img-fluid"  src="./images/PZmap4.png" alt="">
 
-<figcaption style="color:black"> Fig.4. Selecting &zeta; , &omega;<sub>n</sub> entry and entry of pole-zero values </figcaption>						 
+<b> Fig.4. Selecting &zeta; , &omega;<sub>n</sub> entry and entry of pole-zero values </b>						 
 </div>
 
 6. Click on 'Clear' button before the every simulation to clear the previous Map.
