@@ -90,6 +90,10 @@ function inputChange(){
 function addp(){
 	$('#poleDiv').css('display','block'); ///display pole entering box
 	
+	document.getElementById('clr').style.visibility="visible";
+	document.getElementById('pzDiv1').style.visibility="visible";	
+	document.getElementById('pltB').style.visibility="visible";
+	
 	///increase the values of hidden input fields in html page for setting field ids for real and imaginary parts of the poles respectively
 	
       var Real_no = parseInt($('#real').val())+1;
@@ -110,6 +114,9 @@ function addp(){
 	
 	function addz(){
 	$('#zeroDiv').css('display','block'); ///display pole entering box
+	document.getElementById('clr').style.visibility="visible";
+	document.getElementById('pzDiv2').style.visibility="visible";	
+	document.getElementById('pltB').style.visibility="visible";
 	
 	///increase the values of hidden input fields in html page for setting field ids for real and imaginary parts of the poles respectively
 	
@@ -398,10 +405,10 @@ document.getElementById("exportChart").style.display = "block";
 		
 	document.getElementById('AddPole').style.visibility="visible";	
 	document.getElementById('AddZero').style.visibility="visible";	
-	document.getElementById('clr').style.visibility="visible";
-	document.getElementById('pzDiv').style.visibility="visible";
+	//document.getElementById('clr').style.visibility="visible";
+	//document.getElementById('pzDiv').style.visibility="visible";
 	
-	document.getElementById('pltB').style.visibility="visible";
+	//document.getElementById('pltB').style.visibility="visible";
 	document.getElementById('zwnD').style.visibility="hidden";
 	
 	}  
