@@ -104,6 +104,7 @@
 </head>
 
 
+
 <body><!--body tag start-->
     <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
         <div class="row"><!--First row under 1st container start-->
@@ -134,6 +135,7 @@
         
     </div><!--First Container under body tag end-->
     
+    
 	
     <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
       <div class="row"><!--First row under 3rd container start-->
@@ -141,27 +143,28 @@
         <div class="col-md-10"><!--2nd col under 3rd container start-->
             <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
               <ol id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
-                      <li>At first enter the desired value of sampling time. Here default value is 1 for sampling time.</li></br>
+                      <li>At first enter the desired value of sampling time. Here default value is 1 sec for sampling time.</li></br>
   
-					  <li>Enter the required number of poles and zeros value. Here default values are 0 for number of poles and zeros.</li></br>
+					  <li>Click on 'Select Entry Method' dropdown button and select the available options to enter the values.</li></br>
 					   
-					  <li>Click on 'Pole - Zero entry' dropdown-menu and enter the real and imaginary values of pole and zero.
-					      Click on 'Run' button in the dropdown-menu to get the Pole - Zero Map of S plane and Z plane. </li><br/>
+					  <li>For Pole - Zero entry: click on 'Add Poles' button to enter the pole values and click on 'Add Zeros' button to enter the zero values.
+					      Click 'Add Pole' or/and 'Add Zero' buttons multiple times to enter multiple pole/zero values. </li><br/>
 						  
-					  <li>Note: Try to enter the real and imaginary values within the range (-8,3) for better visuals of points in z-plane.
+					  <li><b>Note:</b> Try to enter the real and imaginary values within the range (-8,3) for better visuals of points in z-plane.
 						  If any point in z-plane is not visible means value of the point is out off the axis range. </li><br/>
 					 
-					 <li>To enter the multiple values of poles and zeros, change the previous values of poles and zeros and click on 'Run' button.
+					 <li>Click on 'Plot' button to get the Pole-Zero map of S plane and Z plane.
 					     Plot can be downloaded by clicking on 'Download' button.</li><br/>
 					      
 						  
-					 <li>Click on '&zeta; , &omega;<sub>n</sub> entry' dropdown-menu. 
+					 <li>Click on 'Enter &zeta; , &omega;<sub>n</sub> Values' dropdown button. 
 					     Enter the values of damping ratio (&zeta;)and natural frequency (&omega;<sub>n</sub>).
 					     Click on 'Run' button in the dropdown-menu to get the Pole Map of S plane and Z plane.
 						 Plot can be downloaded by clicking on 'Download' button.</li><br/>
 
-					 <li>Click on 'Clear' button to clear the previous map before the every new simulation. 
-					     Do not click on 'Clear' button if you want to enter values of multiple poles and zeros.</li><br/> 
+					 <li>Click on 'Clear' button before every new simulation to clear the previous map.</li><br/> 
+					     
+					<li><b>Note:</b> Do not click on 'Clear' button if you want to enter values of multiple poles and zeros.</li><br/> 
 
 					
 						 
@@ -177,119 +180,89 @@
 	
 	<div class="row ">
 	
-	<div class="col-md-12">
-	
-	
-			<!--<div   class="img-container">			
-			
-			Enter the Pole P1 value :<input type="number" id="P1" min="-5" value="-1" max="5" step="0.1" style="position:absolute;width:20%" ><br/></br>
-			Enter the Pole P2 value: <input type="number" id="P2" min="-5" value="-2" max="5" step="0.1" style="position:absolute;width:20%"><br/><br/>			
-			<!--Enter the desired sampling time :    <input type="number" id="Ts" min="0.01" value="0.1" max="10" step="0.01" style="position:absolute;width:20%"readonly=readonly><br/></br>
-			Enter the Zero Z1 value :    <input type="number" onchange="inputChange()" id="Z1" min="-5" value="-1.5" max="5" step="0.1" style="position:absolute;width:20%"><br/></br>				
-			</div>
-			<br/>
-			
-				<!--//<button class="btn btn-success" id ="run" onclick="ZOH_mag();ZOH_ph()">ZOH</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="ZOH_fr()">ZOH Freq. Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="ZOH_bode()">ZOH bode</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade1_fr()">ZOH pade1 Freq.Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade1_bode()">ZOH pade1 bode</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade2_fr()">ZOH pade2 Freq.Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="ZOH_pade2_bode()">ZOH pade2 bode</button>-->
-				<!--<button class="btn btn-danger" id ="clr" onclick="refresh()" >Clear</button>--> 
-		Enter the sampling time:&nbsp;<input id= "T" type="number" min="0" max="1" step="0.1" value="1" style="position:absolute;width:5%"> <br/>	<br/>		
-		Enter the number of poles:&nbsp;<input id= "pno" type="number" min="0" max="3" step="1" value="0" style="position:absolute;width:5%"><br/><br/>	
-		Enter the number of zeros:&nbsp;<input id= "zno" type="number" min="0" max="3" step="1" value="0" style="position:absolute;width:5%"><br/><br/>
+	<div class="col-md-12">	
+			 
+		Enter the sampling time:&nbsp;<input id= "T" type="number" min="0" max="1" step="0.1" value="1" style="position:absolute;width:5%;text-align:center"> <br/>	<br/>
+
+		<div class="btn-group">
+		  <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="sem">
+			Select Entry Method
+		  </button>
+		  <ul class="dropdown-menu">
+			<li><a class="dropdown-item" onclick="pzShow()">Pole-Zero Entry</a></li>
+			<li><a class="dropdown-item" onclick="zwShow()">&zeta; ,&nbsp;&omega;<sub>n</sub> Entry</a></li>
+		  </ul>
+		</div>
+
+<br/><br/>		
 		
-		<!--Enter the maximum range of X-axis for s-plane:&nbsp;<input id= "Xmax" type="number" min="2" max="10" step="1" value="3" style="position:absolute;width:5%"><br/><br/>
-		Enter the minimum range of X-axis for s-plane:&nbsp;<input id= "Xmin" type="number" min="-10" max="-2" step="1" value="-3" style="position:absolute;width:5%"><br/><br/>
-		Enter the maximum range of Y-axis for s-plane:&nbsp;<input id= "Ymax" type="number" min="2" max="10" step="1" value="3" style="position:absolute;width:5%"><br/><br/>
-		Enter the minimum range of Y-axis for s-plane:&nbsp;<input id= "Ymin" type="number" min="-10" max="-2" step="1" value="-3" style="position:absolute;width:5%"><br/><br/>
-		<!--<button class="btn btn-success" id ="enter" onclick="enter_pzno()">Enter</button>-->
+		<button class="btn btn-success" id="AddPole" onclick="addp()" style="visibility:hidden">Add Poles</button>
+		
+		<button class="btn btn-success" id="AddZero" onclick="addz()" style="visibility:hidden">Add Zeros</button>	
 		
 	 <div class="d-inline-flex p-3 gy-2">			
-		<div class="dropdown">
-  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onclick="enter_pzno()">
-    Pole - Zero entry
-  </button>
+		<!-- <div class="dropdown">
+ 
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
   
   <li><a style="display:none" class="dropdown-item" id ="P1" >Pole =<input id="P1r" type="number" min="-8" max="8" onchange="inputChange()" >&plus; &nbsp;j&nbsp;<input id="P1im" type="number" min="-8" max="8" onchange="inputChange()"> </a></li>
- <!--<li><a style="display:none"class="dropdown-item" id ="P2" >P<sub>2</sub> =<input id="P2r" type="number">&plus; &nbsp;j&nbsp;<input id="P2im" type="number"> </a></li>
-  <li><a style="display:none"class="dropdown-item" id ="P3" >P<sub>3</sub> =<input id="P3r" type="number">&plus; &nbsp;j&nbsp;<input id="P3im" type="number"> </a></li>-->
-  
+ 
   <li><a style="display:none"class="dropdown-item" id ="Z1" >Zero =<input id="Z1r" type="number" min="-8" max="8" "inputChange()" >&plus; &nbsp;j&nbsp;<input id="Z1im" type="number" min="-8" max="8" "inputChange()" > </a></li>
- <!-- <li><a style="display:none"class="dropdown-item" id ="Z2" >Z<sub>2</sub> =<input id="Z2r" type="number">&plus; &nbsp;j&nbsp;<input id="Z2im" type="number"> </a></li>
-  <li><a style="display:none"class="dropdown-item" id ="Z3" >Z<sub>3</sub> =<input id="Z3r" type="number">&plus; &nbsp;j&nbsp;<input id="Z3im" type="number"> </a></li>-->
-  
+ 
   <li><button class="btn btn-success" id ="run" onclick="SZ()">Run</button></li>
-  <!--  <li><a class="dropdown-item" id ="run" onclick="SZ()">SZ Map</a></li>
-   <!-- <li><a class="dropdown-item" id ="run" onclick="ZOH_bode()">ZOH Bode</a></li>
-    <li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_fr()">ZOH PADE 1 Freq. Resp.</a></li>
-	<li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_bode()">ZOH PADE 1 Bode</a></li>-->
+  
   </ul>
-</div>&nbsp;&nbsp;	&nbsp;&nbsp;	&nbsp;&nbsp;		
+</div>&nbsp;&nbsp;	&nbsp;&nbsp;	&nbsp;&nbsp; -->		
 
-<div class="dropdown">
+<div class="dropdown" style="visibility:hidden" id="zwnD">
   <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false" >
-    &zeta; ,&nbsp;&omega;<sub>n</sub> entry
+    Enter &zeta; ,&nbsp;&omega;<sub>n</sub> Values
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
   
-  <li><a  class="dropdown-item" id="ze"> &zeta; = <input id="Ze" type="number" min="0" max="1" step="0.05" value="0" onchange="inputChange()"> </a></li>
-  <li><a  class="dropdown-item" id="wn" > &omega;<sub>n</sub> = <input id="Wn" type="number"> </a></li>
- <!--<li><a style="display:none"class="dropdown-item" id ="P2" >P<sub>2</sub> =<input id="P2r" type="number">&plus; &nbsp;j&nbsp;<input id="P2im" type="number"> </a></li>
-  <li><a style="display:none"class="dropdown-item" id ="P3" >P<sub>3</sub> =<input id="P3r" type="number">&plus; &nbsp;j&nbsp;<input id="P3im" type="number"> </a></li>-->
-  
- <!-- <li><a style="display:none"class="dropdown-item" id ="Z1" >Zero =<input id="Z1r" type="number">&plus; &nbsp;j&nbsp;<input id="Z1im" type="number"> </a></li>
- <!-- <li><a style="display:none"class="dropdown-item" id ="Z2" >Z<sub>2</sub> =<input id="Z2r" type="number">&plus; &nbsp;j&nbsp;<input id="Z2im" type="number"> </a></li>
-  <li><a style="display:none"class="dropdown-item" id ="Z3" >Z<sub>3</sub> =<input id="Z3r" type="number">&plus; &nbsp;j&nbsp;<input id="Z3im" type="number"> </a></li>-->
+  <li><a  class="dropdown-item" id="ze"> &zeta; = <input id="Ze" type="number" min="0" max="1" step="0.05" value="0" onchange="inputChange()" > </a></li>
+  <li><a  class="dropdown-item" id="wn" > &omega;<sub>n</sub> = <input id="Wn" type="number" min="0" > </a></li>
+ 
   
   <li><button class="btn btn-success" id ="run" onclick="ZWn()">Run</button></li>
-  <!--  <li><a class="dropdown-item" id ="run" onclick="SZ()">SZ Map</a></li>
-   <!-- <li><a class="dropdown-item" id ="run" onclick="ZOH_bode()">ZOH Bode</a></li>
-    <li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_fr()">ZOH PADE 1 Freq. Resp.</a></li>
-	<li><a class="dropdown-item" id ="run" onclick="ZOH_pade1_bode()">ZOH PADE 1 Bode</a></li>-->
+  
   </ul>
 </div>&nbsp;&nbsp;
 		
-		<!--<div class="dropdown">
-  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    First Order Hold
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" id ="run" onclick="FOH_fr()">FOH Freq. Resp.</a></li>
-    <li><a class="dropdown-item" id ="run" onclick="FOH_bode()">FOH Bode</a></li>
-    <li><a class="dropdown-item" id ="run" onclick="FOH_pade1_fr()">FOH PADE 1 Freq. Resp.</a></li>
-	<li><a class="dropdown-item" id ="run" onclick="FOH_pade1_bode()">FOH PADE 1 Bode</a></li>
-  </ul>-->
 </div>&nbsp;&nbsp;
 
-		<button class="btn btn-danger" id ="clr" onclick="refresh()" >Clear</button>
+		<button class="btn btn-danger" id ="clr" onclick="refresh()" style="visibility:hidden">Clear</button>
+		
+		
 	</div>
 	</div>
 	
+	<div class="row justify-content-center" style="visibility:hidden" id="pzDiv">
 	
+	<div class="col-md-6">
+	<div id="poleDiv" style="background-color:#c597f8;width:100%;display:block">
+	<span style="color:black;font-family:'Times New Roman';font-size:18px;font-style:italic">Add Poles</span><br/>
+	</div>
+	<input id="real" value="0" type="hidden">
+	<input id="imaginary" value="0" type="hidden">
+	</div><br/><br/><br/><br/>
 	
-			
-	<!--<div class="row my-5 gy-2">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
+	<div class="col-md-6">
+	<div id="zeroDiv" style="background-color:powderblue;width:100%;display:block">
+	<span style="color:black;font-family:'Times New Roman';font-size:18px;font-style:italic">Add Zeros</span><br/>
+	</div>
+	<input id="real2" value="0" type="hidden">
+	<input id="imaginary2" value="0" type="hidden">
+	</div>
 	
-			
-			
-				<!--//<button class="btn btn-success" id ="run" onclick="ZOH_mag();ZOH_ph()">ZOH</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_fr()">FOH Freq. Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_bode()">FOH bode</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade1_fr()">FOH pade1 Freq.Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade1_bode()">FOH pade1 bode</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade2_fr()">FOH pade2 Freq.Resp.</button>-->
-				<!--<button class="btn btn-success" id ="run" onclick="FOH_pade2_bode()">FOH pade2 bode</button>-->
-				<!--<button class="btn btn-danger" id ="clr" onclick="refresh()" >Clear</button>--
+	<br/><br/><br/><br/>
+	<button class="btn btn-primary" id ="pltB" onclick ="SPP()" style="width:10%;visibility:hidden" >Plot</button>
+	
 	
 	</div>
-	<div class="col-md-1"></div>
-	</div>-->
+	
+			
+	
 		
 		
 		

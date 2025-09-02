@@ -87,8 +87,342 @@ function inputChange(){
 	
 }
 
+function addp(){
+	$('#poleDiv').css('display','block'); ///display pole entering box
+	
+	///increase the values of hidden input fields in html page for setting field ids for real and imaginary parts of the poles respectively
+	
+      var Real_no = parseInt($('#real').val())+1;
+	  var imagy_no = parseInt($('#imaginary').val())+1;
+	  
+	/// set the ids of the real and imaginary boxes of poles
+      var real_input = "<input type='number' id='real_"+Real_no+"' style='width:35%'>";
+	  var imagy_input = "<input type='number' id='imagy_"+imagy_no+"' style='width:35%'>";
+	  
+	 ///Append the total pole with re + jw format in html page 
+	  
+      $('#poleDiv').append(real_input + '<span style="font-weight:bold;font-size:20px;">+ j</span>' + imagy_input);
+	  
+	///change the values of the hidden input fields to new values so that for next pole input it can be increased again  
+      $('#real').val(Real_no);
+	  $('#imaginary').val(imagy_no);
+    }
+	
+	function addz(){
+	$('#zeroDiv').css('display','block'); ///display pole entering box
+	
+	///increase the values of hidden input fields in html page for setting field ids for real and imaginary parts of the poles respectively
+	
+      var Real_no = parseInt($('#real2').val())+1;
+	  var imagy_no = parseInt($('#imaginary2').val())+1;
+	  
+	/// set the ids of the real and imaginary boxes of poles
+      var real_input = "<input type='number' id='real2_"+Real_no+"' style='width:35%'>";
+	  var imagy_input = "<input type='number' id='imagy2_"+imagy_no+"' style='width:35%'>";
+	  
+	 ///Append the total pole with re + jw format in html page 
+	  
+      $('#zeroDiv').append(real_input + '<span style="font-weight:bold;font-size:20px;">+ j</span>' + imagy_input);
+	  
+	///change the values of the hidden input fields to new values so that for next pole input it can be increased again  
+      $('#real2').val(Real_no);
+	  $('#imaginary2').val(imagy_no);
+	  
+	} 
+	  
+	function SPP(){///S-Plane Plot
+	
+	var t= document.getElementById('T').value;
+	
+	var dataArray1 =[];///poles
+	var dataArray2 =[];///zeros
+	
+	var dataArray3 =[];///zpoles
+	var dataArray4 =[];///zzeros
+	var dataArray5 =[];///circle
+	
+	///Entered pole numbers
+	var polRno = $('#real').val();
+	var polIno = $('#imaginary').val();
+	
+	///Entered zeros numbers
+	var zeroRno = $('#real2').val();
+	var zeroIno = $('#imaginary2').val();
+	
+	var pnor,pnoi,znor,znoi;
+	
+	for(var iteration = 1; iteration<= polRno; iteration++){///poles
+		
+		pnor = document.getElementById("real_"+ iteration).value;
+		pnoi = document.getElementById("imagy_"+ iteration).value;
+		dataArray1.push({x:(pnor), y:+(pnoi)});
+		
+		var f = pnor;
+		var f1 = pnoi;
+		
+		///Z-plane		
+		var Zp = math.pow(math.e,math.multiply(t,math.complex(f,f1)));	
+	
+	var Zpr = Zp.re;	
+	var Zpim = Zp.im;
+	
+	dataArray3.push({x:+(Zpr), y:+(Zpim)});	
+		
+	}	
+
+	for(var iteration2 = 1; iteration2<= zeroRno; iteration2++){///zeros
+		
+		znor = document.getElementById("real2_"+ iteration2).value;
+		znoi = document.getElementById("imagy2_"+ iteration2).value;
+		dataArray2.push({x:(znor), y:+(znoi)});
+		
+		var f2 = znor;
+		var f3 = znoi;
+		
+		///z-plane
+		var Zz = math.pow(math.e,math.multiply(t,math.complex(f2,f3)));
+	var Zzr = Zz.re;	
+	var Zzim = Zz.im;	
+	
+	dataArray4.push({x:+(Zzr), y:+(Zzim)});		
+	}
+	
+		
+	var x0=0;
+	var y0=0;
+	var r=1;
+	 for (var th=0;th<=360;th=th+0.1){
+	 var xc=math.multiply(r,math.cos(th));
+	var yc=math.multiply(r,math.sin(th));
+    dataArray5.push({x:+(xc),y:+(yc)});	
+	 }
+	
+document.getElementById('plotbucket').style.display  = "block"; 
+document.getElementById('chartContainer1').style.display  = "block"; 	
+	var chart1 = new CanvasJS.Chart("chartContainer1",
+    {
+      //exportEnabled: true, 
+	  title:{
+      text: "S Plane"
+	  
+      },
+	  
+	 axisX:{
+        interlacedColor: "#dddbdb",
+        title: "Real axis",
+		                 
+		maximum: 10,
+		minimum: -10
+      },
+	     
+    axisY:[
+            	
+	      {
+            title: "Imaginary axis",
+			
+			maximum:10,
+			minimum:-10
+        },
+		
+		{/////poles
+			gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    
+	  
+		},
+		{/////zeros
+			gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    
+	  
+		}
+		],
+	
+	data:[ 
+      {        
+       	type: "scatter",
+		markerType:"cross",
+		color:"red",
+		dataPoints:dataArray1
+	
+       },
+	   
+	   {        
+       	type: "scatter",
+		markerType:"circle",
+		color:"blue",
+		dataPoints:dataArray2
+	
+       },
+	   
+	   {
+	   type:"line",
+	   color:"black",
+	   dataPoints:[
+			{ x: -1000,  y:0  },
+			{ x:1000 , y: 0  },
+            { x:1000, y: 1000},
+			{ x:0, y: 1000  },
+			{ x:0 ,  y: -1000  },
+			{ x:-1000, y: -1000},
+			{ x:-1000, y: 1000},
+			{ x:1000, y: 1000},
+			{ x:1000, y: -1000},
+			{ x:0 ,  y: -1000  }
+	  ]
+	  } 
+	  ]
+       
+	});
+
+	chart1.render();
+
+document.getElementById('chartContainer2').style.display  = "block"; 	
+	var chart2 = new CanvasJS.Chart("chartContainer2",
+    {
+      //animationEnabled: true,
+	  
+		  //animationDuration: 10000, 
+		  zoomEnabled: true,
+    zoomType: "xy",
+	  title:{
+      text: "Z Plane "
+	  
+      },
+	  
+	  axisX:{
+        interlacedColor: "#dddbdb",
+        title: "Real axis",
+		maximum:15,
+		minimum:-15
+      },
+    axisY: [
+	      
+		{/////output Y axis
+		  //logarithmic: true,
+            title: "Imaginary axis",
+			
+			maximum:15,
+			//interval:0.5,
+			minimum:-15,
+        },
+		
+		{/////input y axis invisible
+			gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    
+	  
+		},
+		{/////input y axis invisible
+			gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    
+	  
+		},
+		{/////input y axis invisible
+			gridThickness: 0,
+    tickLength: 0,
+    lineThickness: 0,
+    
+	  
+		}
+		],
+		
+	data:[ 
+     
+	  {        
+        //type: "spline",
+		type: "scatter",
+		//symbol:"x",
+		//color:"109DB6",
+		markerType:"cross",
+		color:"red",
+        dataPoints:dataArray3
+	
+       },
+	   {        
+        //type: "spline",
+		type: "scatter",
+		//color:"109DB6",
+		//markerType:"circle",
+		color:"blue",
+        dataPoints:dataArray4
+	
+       },
+	    {
+		   type:"bubble",
+	   color:"black",
+	   dataPoints:dataArray5 
+	  },
+	   {
+		   type:"line",
+	   color:"black",
+	   dataPoints:[
+			
+			{ x: -10000,  y:0  },
+			{ x:10000 , y: 0  },
+            { x:10000, y: 10000},
+			{ x:0, y: 10000  },
+			{ x:0 ,  y: -10000  },
+			{ x:-10000, y: -10000},
+			{ x:-10000, y: 10000},
+			{ x:10000, y: 10000},
+			{ x:10000, y: -10000},
+			{ x:0 ,  y: -10000  }
+			
+	  ]
+
+
+
+	  }
+	   
+			
+	   ]
+       
+	});
+
+	chart2.render();
+
+document.getElementById("exportChart").style.display = "block";
+		
+	}  
+	
+	  
+	function pzShow(){
+		
+	document.getElementById('sem').innerHTML = "Pole-Zero Entry";	
+		
+	document.getElementById('AddPole').style.visibility="visible";	
+	document.getElementById('AddZero').style.visibility="visible";	
+	document.getElementById('clr').style.visibility="visible";
+	document.getElementById('pzDiv').style.visibility="visible";
+	
+	document.getElementById('pltB').style.visibility="visible";
+	document.getElementById('zwnD').style.visibility="hidden";
+	
+	}  
+	function zwShow(){
+		
+	document.getElementById('sem').innerHTML = "&zeta;, &omega;<sub>n</sub> Entry";
+		
+	document.getElementById('AddPole').style.visibility="hidden";	
+	document.getElementById('AddZero').style.visibility="hidden";	
+	document.getElementById('clr').style.visibility="visible";
+	document.getElementById('pzDiv').style.visibility="hidden";
+	
+	document.getElementById('pltB').style.visibility="hidden";
+	document.getElementById('zwnD').style.visibility="visible";
+	
+	}   
+	  
+	  
+
 function refresh(){
-//location.reload();	
+/* //location.reload();	
 document.getElementById('plotbucket').style.display = "none";
 document.getElementById('chartContainer1').style.display = "none";
 document.getElementById('chartContainer2').style.display = "none";
@@ -101,7 +435,9 @@ dataOPPoints4 =[];
 dataOPPoints5 =[];
 dataOPPoints6 =[];
 dataOPPoints7 =[];
-dataOPPoints8 =[];
+dataOPPoints8 =[]; */
+
+location.reload();
 }
 
 var dataOPPoints=[];	///for plotting chart
