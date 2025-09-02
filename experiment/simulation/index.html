@@ -104,6 +104,15 @@
 </head>
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DR65GC9DFB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DR65GC9DFB');
+</script>
 
 <body><!--body tag start-->
     <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
@@ -134,7 +143,6 @@
         <hr>
         
     </div><!--First Container under body tag end-->
-    
     
 	
     <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
@@ -239,17 +247,17 @@
 	
 	<div class="row justify-content-center" style="visibility:hidden" id="pzDiv">
 	
-	<div class="col-md-6">
+	<div class="col-md-6" id="pzDiv1">
 	<div id="poleDiv" style="background-color:#c597f8;width:100%;display:block">
-	<span style="color:black;font-family:'Times New Roman';font-size:18px;font-style:italic">Add Poles</span><br/>
+	<span style="color:black;font-family:'Times New Roman';font-size:18px;font-style:italic">Enter Pole Values</span><br/>
 	</div>
 	<input id="real" value="0" type="hidden">
 	<input id="imaginary" value="0" type="hidden">
 	</div><br/><br/><br/><br/>
 	
-	<div class="col-md-6">
+	<div class="col-md-6" id="pzDiv2">
 	<div id="zeroDiv" style="background-color:powderblue;width:100%;display:block">
-	<span style="color:black;font-family:'Times New Roman';font-size:18px;font-style:italic">Add Zeros</span><br/>
+	<span style="color:black;font-family:'Times New Roman';font-size:18px;font-style:italic">Enter Zero Values</span><br/>
 	</div>
 	<input id="real2" value="0" type="hidden">
 	<input id="imaginary2" value="0" type="hidden">
