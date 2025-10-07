@@ -1012,6 +1012,13 @@ document.getElementById('chartContainer2').style.display  = "block";
       //animationEnabled: true,
 	  
 		  //animationDuration: 10000, 
+		  zoomEnabled: true,
+    zoomType: "xy",
+	  title:{
+      text: "Z Plane "
+	  
+      },
+		  
 	  title:{
       text: "Z Plane "
 	  

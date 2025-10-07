@@ -1,13 +1,15 @@
 ### Aim of the experiment
 
-1. Mapping the pole-zero locations of s plane into z plane.
+<ul>
 
-2. Try for various pole-zero locations in s plane corresponding to
+<li> Mapping the pole-zero locations of s plane into z plane.</li>
+<li> Try for various pole-zero locations in s plane corresponding to </li>
 
-    i) Constant Damping ratio &zeta; ,
+1. Constant Damping ratio &zeta; ,
 
-    ii) Constant Attenuation &sigma; ,
+2. Constant Attenuation &sigma; ,
 
-    iii) Constant Frequency &omega;,
+3. Constant Frequency &omega;,
 
-    Check corresponding z domain mapping.
+Check corresponding z domain mapping.
+</ul>
