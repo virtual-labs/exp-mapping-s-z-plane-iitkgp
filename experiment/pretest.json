@@ -13,12 +13,12 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Q2. Which one of the following rules determine the mapping of s-plane to z-plane? ",
+      "question": "Q2. Which one of the following rules determines the mapping of the S-plane to the Z-plane? ",
       "answers": {
-        "a": "Right side of the s-plane maps into outside of the unit circle in z-plane",
-        "b": "Left half of s-plane maps into inside of the unit circle",
-        "c": "imaginary axis in s-plane maps into the circumference of the unit circle",
-        "d": "all of the mentioned"
+        "a": "The right half of the S-plane maps to the exterior of the unit circle in the Z-plane",
+        "b": "The left half of the S-plane maps to the interior of the unit circle in the Z-plane",
+        "c": "The imaginary axis in the s-plane maps to the circumference of the unit circle in the Z-plane",
+        "d": "All of the mentioned"
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
@@ -46,7 +46,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Q5. Pole of a system lies on the unit cirle in the z-plane, then the system is :",
+      "question": "Q5. Pole of a system lies on the unit cirle in the z-plane, then the system is:",
       "answers": {
         "a": "Unstable",
         "b": "Stable",

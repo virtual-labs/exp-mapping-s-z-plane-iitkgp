@@ -2,7 +2,6 @@
 
 <b>Steps to perform the simulation</b>
 
-
 <ol type="1">
 
 <li>At first enter the desired value of sampling time. Here default value is 1 sec for sampling time.</li></br>
