@@ -8,3 +8,5 @@
 #### Video Lectures
 
 <a href="https://nptel.ac.in/courses/108103008" target="_blank">Click here for NPTEL Lecture on Digital Control Systems</a>
+
+("Lecture 2: Relationship between s-plane and z-plane", Module 2: Modeling Discrete Time Systems by Pulse Transfer Function)
