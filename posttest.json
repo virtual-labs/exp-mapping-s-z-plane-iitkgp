@@ -1,0 +1,62 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Q1. The mapping of points from the S-plane to the Z-plane is given by the relation: ",
+      "answers": {
+        "a": "<img src=./images/Q1a.png>",
+        "b": "<img src=./images/Q1b.png>",
+        "c": " <img src=./images/Q1c.png>",
+        "d": "<img src=./images/Q1d.png>"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q2. If the damping ratio value is zero, then the pole location is: ",
+      "answers": {
+        "a": "Outside of the unit circle in the z-plane",
+        "b": "Left half of the z-plane ",
+        "c": "On the unit circle",
+        "d": "Imaginary axis in the z-plane"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q3. What is the behavior of the pole if the natural frequency increases from zero with a constant damping ratio?  ",
+      "answers": {
+        "a": "Radially moving away from the origin of the S-plane in the left half",
+        "b": "Moving away from the imaginary axis in right half of the S-plane ",
+        "c": "Moving closer toward the imaginary axis of the S-plane",
+        "d": "Moving closer toward the real axis of the S-plane "
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q4. What is the behavior of the poles in the Z-plane if the damping ratio increases from 0, while the natural frequency remains constant in the S-domain? ",
+      "answers": {
+        "a": "Poles move towards the unit circle from inside in the Z-plane",
+        "b": "Poles move away from the unit circle towards the origin in the Z-plane ",
+        "c": "Poles move towards the unit circle from outside in the Z-plane",
+        "d": "Poles remain on the unit circle in the Z-plane and rotate along a circular path "
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Q5. What is the behavior of the poles in the Z-plane if the damping ratio is zero and the natural frequency varies in the S-plane? ",
+      "answers": {
+        "a": "Poles remain on the unit circle in the Z-plane and rotate along a circular path",
+        "b": "Poles remain on the imaginary axis in the Z-plane ",
+        "c": "Poles move towards the unit circle from outside in the Z-plane",
+        "d": "Poles move towards the unit circle from inside in the Z-plane "
+        
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+    
+  ]
+}
